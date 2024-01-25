@@ -13,6 +13,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
 
+/**
+ * A composable function that displays the main screen of the application.
+ *
+ * This function displays a screen with two buttons and a text field. The first button changes its color
+ * between red and blue each time it's clicked. The second button calls an API and updates the text field
+ * with the response from the API. While the API call is in progress, a CircularProgressIndicator is displayed.
+ *
+ * @param viewModel an instance of [MainViewModel] that this function will use to interact with the rest of the application.
+ */
 @Composable
 fun MainScreen(viewModel: MainViewModel) {
     Box(
@@ -40,6 +49,11 @@ fun MainScreen(viewModel: MainViewModel) {
     }
 }
 
+/**
+ * A preview composable function that displays a preview of the main screen of the application.
+ *
+ * This function is annotated with @Preview, so it will be displayed in the Android Studio preview.
+ */
 @Preview
 @Composable
 fun PreviewMainScreen(){

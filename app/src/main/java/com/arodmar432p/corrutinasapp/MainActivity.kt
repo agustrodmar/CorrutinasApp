@@ -13,6 +13,12 @@ import com.arodmar432p.corrutinasapp.corrutinasapp.ui.MainScreen
 import com.arodmar432p.corrutinasapp.corrutinasapp.ui.MainViewModel
 import com.arodmar432p.corrutinasapp.ui.theme.CorrutinasAppTheme
 
+
+/**
+ * This class represents the main activity of the application.
+ *
+ * This activity sets the content view to the main screen of the application when it's created.
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
