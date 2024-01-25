@@ -12,10 +12,18 @@ import kotlinx.coroutines.launch
 class MainViewModel(private val lockUseCase: LockUseCase) : ViewModel() {
     var apiResponse by mutableStateOf("")
     var color by mutableStateOf(Color.Red)
+    var isLoading by mutableStateOf(false)
 
     fun callApi() {
         viewModelScope.launch {
-            apiResponse = lockUseCase.fetchData()
+            try {
+                isLoading = true
+                apiResponse = lockUseCase.fetchData()
+            } catch (e: Exception) {
+                println("Error ${e.message}")
+            } finally {
+                isLoading = false
+            }
         }
     }
 

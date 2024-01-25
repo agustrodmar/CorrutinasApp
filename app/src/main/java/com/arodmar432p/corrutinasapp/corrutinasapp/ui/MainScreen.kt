@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -26,7 +27,11 @@ fun MainScreen(viewModel: MainViewModel) {
                 Text("Cambiar color")
             }
 
-            Text(viewModel.apiResponse)
+            if (viewModel.isLoading) {
+                CircularProgressIndicator()
+            } else {
+                Text(viewModel.apiResponse)
+            }
 
             Button(onClick = { viewModel.callApi() }) {
                 Text("Llamar API")
