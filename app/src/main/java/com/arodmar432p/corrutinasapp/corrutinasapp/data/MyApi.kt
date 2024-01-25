@@ -1,12 +1,14 @@
 package com.arodmar432p.corrutinasapp.corrutinasapp.data
 
+import kotlinx.coroutines.delay
+
 class MyApi {
 
     var count = 0
 
-    fun lockApp(): String {
-        Thread.sleep(5000)
+    suspend fun fetchData(): String {
+        delay(5000)
         count++
-        return "Respuesta de la API $count"
+        return "Respuesta de la API ($count)"
     }
 }
